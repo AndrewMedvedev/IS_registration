@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "регистрация-иб"
+version = "0.1.0"
+description = ""
+authors = ["AndrewMedvedev <andrejmedvedev2713@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = {extras = ["all"], version = "^0.115.5"}
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+asyncpg = "^0.30.0"
+sqlalchemy = "^2.0.36"
+alembic = "^1.14.0"
+email-validator = "^2.2.0"
+pyvalid = "^1.0.4"
+pydantic-settings = "^2.6.1"
+phonenumbers = "^8.13.50"
+python-jose = "^3.3.0"
+loguru = "^0.7.2"
+slowapi = "^0.1.9"
+bcrypt = {extras = ["4-0-1"], version = "^4.2.1"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
