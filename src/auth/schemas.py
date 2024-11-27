@@ -38,6 +38,19 @@ class UserModel(BaseModel):
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="email не соответствует формату"
             )
+            
+            
+    @field_validator("hash_password")
+    @classmethod
+    def validate_hash_password(cls, value: str) -> str:
+        mesyac = ["январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"]
+        if value.lower() not in mesyac:
+            return value
+        else:
+            raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="пароль не соответствует формату"
+            )
 
 
 class GetUser(BaseModel):
@@ -54,6 +67,19 @@ class GetUser(BaseModel):
             raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="email не соответствует формату"
+            )
+    
+    
+    @field_validator("hash_password")
+    @classmethod
+    def validate_hash_password(cls, value: str) -> str:
+        mesyac = ["январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"]
+        if value.lower() not in mesyac:
+            return value
+        else:
+            raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="пароль не соответствует формату"
             )
             
             
